@@ -9,7 +9,7 @@ const Header = () => {
   const pathname = usePathname();
 
   const isHome = pathname === "/";
-  const isCatalog = pathname.startsWith("/catalog");
+  const isCatalog = pathname === "/catalog";
 
   return (
     <header className={styles.header}>
