@@ -3,8 +3,6 @@ import { api } from "./api";
 import type { Car } from "@/types/car";
 import type { CarFilterValues } from "@/components/CarFilter/CarFilter";
 
-// Fetch all cars
-
 interface FetchCarsParams {
   page?: number;
   perPage?: number;
@@ -31,8 +29,6 @@ export async function fetchCars({
   return response.data;
 }
 
-// Fetch one car
-
 interface FetchCarParams {
   id: string;
 }
@@ -42,8 +38,6 @@ export async function fetchCar({ id }: FetchCarParams): Promise<Car> {
 
   return response.data;
 }
-
-// Send order
 
 interface SendOrderParams {
   id: string;

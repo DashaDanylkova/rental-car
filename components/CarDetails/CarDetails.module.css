@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+  box-sizing: border-box;
+  width: 528px;
+  height: 968px;
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.additionalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.conditionsList,
+.specificationsList,
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
