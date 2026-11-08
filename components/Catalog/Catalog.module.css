@@ -1,0 +1,81 @@
+.catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.contentWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carList li {
+  flex: 0 0 276px;
+  width: 276px;
+  min-width: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 465px;
+  background: rgba(245, 245, 245, 0.89);
+}
+
+.loader {
+  width: 64px;
+  height: 64px;
+  border: 5px solid #d9d9d9;
+  border-top-color: var(--light-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.emptyMessage {
+  padding: 48px 16px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--main);
+}
+
+.loadMore {
+  min-width: 145px;
+  padding: 12px 24px;
+  border: 1px solid var(--light-blue);
+  border-radius: 12px;
+  background-color: transparent;
+  color: var(--main);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.loadMore:hover {
+  border-color: var(--dark-blue);
+}
+
+.loadMore:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
