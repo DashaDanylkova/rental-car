@@ -12,6 +12,7 @@ import { fetchFilters } from "@/lib/api/filters";
 
 import CarCard from "@/components/CarCard/CarCard";
 import FetchMessage from "@/components/FetchMessage/FetchMessage";
+import NoCarsFound from "@/components/NoCarsFound/NoCarsFound";
 import CarFilter, {
   type CarFilterValues,
 } from "@/components/CarFilter/CarFilter";
@@ -20,6 +21,7 @@ import styles from "./Catalog.module.css";
 
 export default function CatalogClient() {
   const [filters, setFilters] = useState<CarFilterValues>({});
+  const [filterResetKey, setFilterResetKey] = useState(0);
 
   const { data: availableFilters } = useQuery({
     queryKey: ["filters"],
@@ -52,9 +54,18 @@ export default function CatalogClient() {
 
   const cars = data?.pages.flatMap((page) => page.cars) ?? [];
 
+  function handleResetFilters() {
+    setFilters({});
+    setFilterResetKey((prev) => prev + 1);
+  }
+
   return (
     <section className={styles.catalog}>
-      <CarFilter filters={availableFilters} onSearch={setFilters} />
+      <CarFilter
+        key={filterResetKey}
+        filters={availableFilters}
+        onSearch={setFilters}
+      />
 
       <div className={`${styles.contentWrapper} container`}>
         {(isPending || (isFetching && !isFetchingNextPage)) && (
@@ -76,7 +87,7 @@ export default function CatalogClient() {
                 ))}
               </ul>
             ) : (
-              <p className={styles.emptyMessage}>No cars found.</p>
+              <NoCarsFound onReset={handleResetFilters} />
             )}
           </>
         )}

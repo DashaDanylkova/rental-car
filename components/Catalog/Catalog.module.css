@@ -69,13 +69,11 @@
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
+  transition: background-color 250ms ease;
 }
 
-.loadMore:hover {
+.loadMore:hover,
+.loadMore:focus-visible,
+.loadMore:active {
   border-color: var(--dark-blue);
-}
-
-.loadMore:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
