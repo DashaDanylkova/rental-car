@@ -59,18 +59,38 @@
 .carDetails {
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px 8px;
+
   width: 100%;
+  max-width: 244px;
+  min-width: 0;
   padding: 8px;
   margin: 0 0 40px;
+
   border-radius: 8px;
   background-color: var(--bg);
   color: var(--main);
+
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   list-style: none;
+}
+
+.carDetails li {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.carDetails li:not(:last-child)::after {
+  content: "|";
+  margin-left: 8px;
+  color: #dadde1;
 }
 .detailsWrapper {
   display: flex;

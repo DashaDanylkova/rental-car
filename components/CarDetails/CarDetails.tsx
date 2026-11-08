@@ -102,6 +102,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
           </ul>
         </section>
         <hr />
+
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>
             Accessories and Functionalities

@@ -26,7 +26,11 @@ export default function CarDetailsPage() {
   });
 
   if (isPending) {
-    return <FetchMessage />;
+    return (
+      <div className={styles.loading}>
+        <FetchMessage />
+      </div>
+    );
   }
 
   if (isError || !car) {
