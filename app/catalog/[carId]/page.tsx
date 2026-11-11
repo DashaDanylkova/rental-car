@@ -55,10 +55,14 @@ export default function CarDetailsPage() {
           />
         </div>
 
-        <BookingForm carId={carId} />
+        <div className={styles.bookingWrapper}>
+          <BookingForm carId={carId} />
+        </div>
       </div>
 
-      <CarDetails car={car} />
+      <div className={styles.detailsWrapper}>
+        <CarDetails car={car} />
+      </div>
     </section>
   );
 }

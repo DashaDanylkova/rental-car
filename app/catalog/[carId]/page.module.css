@@ -1,10 +1,10 @@
 .page {
   display: grid;
-  grid-template-columns: minmax(0, 540px) minmax(0, 528px);
+  grid-template-columns: minmax(0, 1fr);
   gap: 32px;
   justify-content: center;
-  padding-top: 84px;
-  padding-bottom: 84px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .mainContent {
@@ -18,7 +18,8 @@
 .imageWrapper {
   position: relative;
   width: 100%;
-  height: 512px;
+  height: auto;
+  aspect-ratio: 540 / 512;
   overflow: hidden;
   border-radius: 16px;
 }
@@ -27,6 +28,21 @@
   object-fit: cover;
   object-position: center;
 }
+
+.detailsWrapper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.bookingWrapper {
+  width: 100%;
+  min-width: 0;
+}
+
 .loading {
   display: flex;
   justify-content: center;
@@ -34,21 +50,42 @@
   min-height: 100vh;
   width: 100%;
 }
+
 .message {
   padding: 80px 24px;
   text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .page {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    align-items: start;
+  }
+
+  .mainContent {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .detailsWrapper {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page {
+    grid-template-columns: minmax(0, 540px) minmax(0, 528px);
     gap: 32px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 84px;
+    padding-bottom: 84px;
   }
 
   .imageWrapper {
-    height: auto;
-    aspect-ratio: 540 / 512;
+    height: 512px;
+    aspect-ratio: auto;
   }
 }
