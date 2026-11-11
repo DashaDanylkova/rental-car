@@ -96,7 +96,13 @@
   color: red;
 }
 
-.dropdown,
+.dropdown {
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .select {
   box-sizing: border-box;
   width: 100%;
@@ -281,11 +287,6 @@
   .field:nth-child(3) {
     flex: 0 0 408px;
     width: 408px;
-  }
-
-  .dropdown,
-  .select {
-    width: 204px;
   }
 
   .inputWrapper {
