@@ -13,7 +13,8 @@
 .carList {
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 32px;
+  justify-content: center;
+  gap: 32px 0;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -25,7 +26,6 @@
   width: 276px;
   min-width: 0;
 }
-
 .overlay {
   position: absolute;
   inset: 0;
@@ -76,4 +76,17 @@
 .loadMore:focus-visible,
 .loadMore:active {
   border-color: var(--dark-blue);
+}
+
+@media (min-width: 768px) {
+  .carList {
+    column-gap: 24px;
+    row-gap: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .carList {
+    column-gap: 32px;
+    row-gap: 48px;
+  }
 }

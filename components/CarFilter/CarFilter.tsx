@@ -54,7 +54,6 @@ export default function CarFilter({ filters, onSearch }: CarFilterProps) {
     return priceArr;
   }
 
-  // Закрываем dropdown при клике за его пределами или нажатии Escape.
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Node;
@@ -131,7 +130,7 @@ export default function CarFilter({ filters, onSearch }: CarFilterProps) {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`container ${styles.container}`}>
       <form
         id="car-filter"
         className={styles.form}
