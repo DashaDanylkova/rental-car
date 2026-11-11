@@ -76,21 +76,19 @@ export default function CatalogClient() {
 
         {isError && <p>Failed to load cars. Please try again.</p>}
 
-        {!isPending && !isError && (
-          <>
-            {cars.length > 0 ? (
-              <ul className={styles.carList}>
-                {cars.map((car) => (
-                  <li key={car.id}>
-                    <CarCard car={car} />
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <NoCarsFound onReset={handleResetFilters} />
-            )}
-          </>
-        )}
+        {!isPending &&
+          !isError &&
+          (cars.length > 0 ? (
+            <ul className={styles.carList}>
+              {cars.map((car) => (
+                <li key={car.id}>
+                  <CarCard car={car} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <NoCarsFound onReset={handleResetFilters} />
+          ))}
       </div>
 
       {hasNextPage && (

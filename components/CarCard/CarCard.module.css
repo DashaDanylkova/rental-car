@@ -56,19 +56,25 @@
   white-space: nowrap;
 }
 
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+}
+
 .carDetails {
   box-sizing: border-box;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
-  gap: 4px 8px;
+  gap: 4px 6px;
 
   width: 100%;
-  max-width: 244px;
   min-width: 0;
   padding: 8px;
-  margin: 0 0 40px;
+  margin: auto 0 24px;
 
   border-radius: 8px;
   background-color: var(--bg);
@@ -88,27 +94,14 @@
 }
 
 .carDetails li:not(:last-child)::after {
-  content: "|";
-  margin-left: 8px;
-  color: #dadde1;
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin-left: 6px;
+  background-color: #dadde1;
+  flex-shrink: 0;
 }
-.detailsWrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 100%;
-  min-width: 0;
-}
-
-.carDetails li {
-  padding-right: 5px;
-  margin-right: 5px;
-}
-
-.carDetails li:not(:last-child) {
-  border-right: 1px solid #dadde1;
-}
-
 .detailsLink {
   box-sizing: border-box;
   display: flex;
@@ -116,7 +109,7 @@
   align-items: center;
   width: 100%;
   height: 44px;
-  margin-top: auto;
+  margin-top: 0;
   border-radius: 12px;
   background-color: var(--light-blue);
   color: var(--white);

@@ -20,7 +20,7 @@
   list-style: none;
 }
 
-.carList li {
+.carList > li {
   flex: 0 0 276px;
   width: 276px;
   min-width: 0;
